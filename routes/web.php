@@ -61,3 +61,9 @@ Route::post("/posts/add")
     ->uses("Post\AddController@post")
     ->name("post_add_post")
 ;
+
+Route::post("/posts/{post}/comment")
+    ->uses("Post\CommentController")
+    ->name("post_comment")
+    ->where("post", "[0-9]+")
+;
